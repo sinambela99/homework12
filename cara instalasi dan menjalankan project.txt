@@ -1,0 +1,27 @@
+1.Clone Project dari gitlab
+2.instal depedency yang diperlukan seperti
+npm install
+npm i @chakraui/react@emotion/react @emotion/styled framer-motion
+npm install @reduxjs/toolkit
+npm install react-redux
+3.kemudian yang harus dilengkapi pada file tersebut seperti fungsi pada restart disaat gamenya sedang dalam keadaan seri atau tidak ada pemenang sehingga tombol restartnya dapat berfungsi 
+yang harus dilakukan terlebih dahulu adalah membuat recuder pada restart copy codingan sebagai berikut
+restartGame(state, action) {
+            return {
+              squares: Array(9).fill(null),
+              winner: null,
+              nextValue: "X",
+              status: "Next player: X",
+            };
+kemudian kita melakukan export action kodenya sebagai berikut
+export const { restartGame } = ticTacToe.actions;
+setelah itu berikan fungsi restart dan dispatch sebagai berikut
+function restart(){
+  dispatch(restartGame())
+}
+pada tahap akhir tinggal melakukan onlick pada bagian tombol restart seperti berikut 
+      <Button onClick={restart} variant='solid' colorScheme='green'>
+        RESTART
+      </Button>
+
+kemudian tinggal menjalankan game dengan mengetik pada terminal yaitu "npm start" 
