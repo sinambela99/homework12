@@ -69,9 +69,10 @@ function restart(){
         variant="solid"
         borderWidth="2px"
         borderColor="green"
-        fontSize='3xl'
+        fontSize='5xl'
+        color='tomato'
         onClick={() => selectSquareHandler(i)}
-      >
+         >
         {squares[i]}
       </Button>
     );
@@ -79,7 +80,7 @@ function restart(){
 
   return (
     <VStack>
-      <Text fontSize='3xl' as='b'>{status}</Text>
+      <Text fontSize='4xl' as='b'>{status}</Text>
       <Flex >
         {renderSquare(0)}
         {renderSquare(1)}
